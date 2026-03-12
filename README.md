@@ -1,5 +1,7 @@
 # Credit Card Fraud Detection
 
+Machine Learning | Fraud Detection | Imbalanced Dataset | SMOTE
+
 End-to-End Machine Learning Pipeline for Detecting Fraudulent Credit Card Transactions.
 
 This project builds a machine learning pipeline to identify fraudulent credit card transactions using an imbalanced dataset and SMOTE-based oversampling.
@@ -90,3 +92,9 @@ credit-card-fraud-detection/
 ├── notebooks/             # Future notebooks
 ├── requirements.txt
 └── README.md
+
+## Result
+
+The model detects fraudulent transactions using logistic regression and handles severe class imbalance using SMOTE.
+
+The trained model achieves strong fraud detection performance with improved recall and F1-score for the minority fraud class.
