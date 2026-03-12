@@ -98,3 +98,21 @@ credit-card-fraud-detection/
 The model detects fraudulent transactions using logistic regression and handles severe class imbalance using SMOTE.
 
 The trained model achieves strong fraud detection performance with improved recall and F1-score for the minority fraud class.
+
+## How to Run
+
+Install dependencies
+
+pip install -r requirements.txt
+
+Run preprocessing
+
+python src/data_preprocessing.py
+
+Train the model
+
+python src/train_model.py
+
+Evaluate the model
+
+python src/evaluate_model.py
