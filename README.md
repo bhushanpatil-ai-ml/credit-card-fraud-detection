@@ -79,7 +79,6 @@ SMOTE is used to generate synthetic fraud samples and improve fraud detection pe
 
 ## Project Structure
 
-```text
 credit-card-fraud-detection/
 │
 ├── data/                  # Dataset
@@ -93,11 +92,15 @@ credit-card-fraud-detection/
 ├── requirements.txt
 └── README.md
 
+---
+
 ## Result
 
 The model detects fraudulent transactions using logistic regression and handles severe class imbalance using SMOTE.
 
 The trained model achieves strong fraud detection performance with improved recall and F1-score for the minority fraud class.
+
+---
 
 ## How to Run
 
@@ -116,6 +119,8 @@ python src/train_model.py
 Evaluate the model
 
 python src/evaluate_model.py
+
+---
 
 ## Author
 
