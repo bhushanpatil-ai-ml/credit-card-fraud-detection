@@ -17,6 +17,9 @@ To detect fraudulent credit card transactions and handle class imbalance effecti
 Note: The dataset is not included in this repository due to GitHub file size limits.
 Download it from Kaggle and place it inside the `data/` folder.
 
+Dataset Source:
+https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+
 Credit Card Fraud Detection Dataset
 
 Records: 284,807 transactions  
