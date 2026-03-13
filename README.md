@@ -1,15 +1,14 @@
-# Credit Card Fraud Detection
+# House Price Prediction – Advanced Machine Learning Regression Pipeline
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![Machine Learning](https://img.shields.io/badge/Machine-Learning-green)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-orange)
 ![XGBoost](https://img.shields.io/badge/XGBoost-red)
-![Imbalanced Data](https://img.shields.io/badge/SMOTE-Imbalanced--Learning-purple)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-End-to-End Machine Learning Pipeline for Detecting Fraudulent Credit Card Transactions using SMOTE, Random Forest, and XGBoost.
+An end-to-end machine learning regression pipeline for predicting house prices using property-related features.
 
-This project builds a complete machine learning workflow to identify fraudulent credit card transactions from an extremely imbalanced dataset. The pipeline includes data preprocessing, class imbalance handling using SMOTE, training multiple models, evaluating performance, and saving the best model.
+This project builds a complete machine learning workflow including data preprocessing, exploratory data analysis, outlier handling, log transformation, model comparison, cross-validation, hyperparameter tuning, and final model evaluation.
 
 ---
 
@@ -23,9 +22,10 @@ This project builds a complete machine learning workflow to identify fraudulent 
 - Project Workflow  
 - Evaluation Metrics  
 - Model Performance  
+- Feature Importance  
 - Project Structure  
 - Results  
-- How to Run  
+- How to Run the Project  
 - Future Improvements  
 - Author  
 
@@ -33,11 +33,18 @@ This project builds a complete machine learning workflow to identify fraudulent 
 
 ## Problem Statement
 
-Credit card fraud detection is a challenging machine learning problem because fraudulent transactions are extremely rare compared to normal transactions.
+Accurately predicting house prices is a fundamental problem in real estate analytics.
 
-In most financial transaction datasets, fraud cases represent less than **1% of total transactions**, making this a **highly imbalanced classification problem**.
+Housing prices depend on multiple factors such as:
 
-Machine learning models must be trained carefully to detect these rare fraud cases while minimizing false positives.
+- number of bedrooms
+- number of bathrooms
+- living area
+- property grade
+- location attributes
+- construction year
+
+The challenge is to build a regression model that captures the relationships between these features and accurately predicts property prices.
 
 ---
 
@@ -45,39 +52,33 @@ Machine learning models must be trained carefully to detect these rare fraud cas
 
 The main objectives of this project are:
 
-- Build an end-to-end machine learning pipeline for fraud detection  
-- Handle severe class imbalance using SMOTE  
-- Train multiple machine learning models  
-- Compare model performance using classification metrics  
-- Save the best performing model  
+- Build a complete regression pipeline for house price prediction
+- Perform exploratory data analysis and feature analysis
+- Detect and remove outliers using IQR
+- Apply log transformation to improve target distribution
+- Train multiple regression models
+- Compare model performance
+- Tune hyperparameters using GridSearchCV
+- Save the final trained model
 
 ---
 
 ## Dataset
 
-The dataset used in this project is the **Credit Card Fraud Detection Dataset** from Kaggle.
+The dataset used in this project is the **House Sales Dataset**.
 
-Dataset Source:
+Dataset Source  
+https://www.kaggle.com/datasets/harlfoxem/housesalesprediction
 
-https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+Dataset Characteristics
 
-Dataset Characteristics:
+- Number of houses: 21,613
+- Multiple property attributes
+- Real estate pricing dataset
 
-- Total Transactions: 284,807  
-- Fraud Transactions: 492  
-- Features: 31 columns  
-- Highly imbalanced dataset  
+Target Variable
 
-Target Variable:
-
-```
-Class
-```
-
-```
-0 → Normal Transaction
-1 → Fraud Transaction
-```
+price
 
 ---
 
@@ -87,32 +88,34 @@ Class
 Python
 
 ### Data Science Libraries
-Pandas  
-NumPy  
-Matplotlib  
-Seaborn  
+
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
 
 ### Machine Learning
-Scikit-learn  
-XGBoost  
-imbalanced-learn (SMOTE)
+
+- Scikit-learn
+- XGBoost
 
 ### Tools
-Git  
-GitHub  
-Joblib  
+
+- Git
+- GitHub
+- Joblib
 
 ---
 
 ## Machine Learning Models
 
-This project compares multiple classification models:
+This project compares multiple regression algorithms:
 
-- Logistic Regression (Baseline Model)  
-- Random Forest (Ensemble Model)  
-- XGBoost (Gradient Boosting Model)  
+- Linear Regression (Baseline Model)
+- Random Forest Regressor
+- XGBoost Regressor
 
-These models help identify patterns that distinguish fraudulent transactions from legitimate ones.
+XGBoost generally performs best for tabular datasets.
 
 ---
 
@@ -120,74 +123,96 @@ These models help identify patterns that distinguish fraudulent transactions fro
 
 1. Data Loading  
 2. Exploratory Data Analysis (EDA)  
-3. Class Distribution Analysis  
-4. Train-Test Split  
-5. SMOTE Oversampling  
-6. Model Training  
-7. Model Evaluation  
-8. Model Comparison  
-9. Best Model Selection  
-10. Model Saving  
+3. Correlation Analysis  
+4. Removing unnecessary columns  
+5. Outlier detection and removal using IQR  
+6. Log transformation of target variable  
+7. Feature and target separation  
+8. Train-test split  
+9. Model training  
+10. Model evaluation  
+11. Cross-validation  
+12. Hyperparameter tuning using GridSearchCV  
+13. Feature importance analysis  
+14. Final tuned model saving  
 
 ---
 
 ## Evaluation Metrics
 
-Because fraud detection involves imbalanced data, accuracy alone is not sufficient.
+Regression models are evaluated using:
 
-The models are evaluated using:
+- R² Score
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
 
-- Accuracy  
-- Precision  
-- Recall  
-- F1 Score  
-- Confusion Matrix  
-- Classification Report  
-
-Special focus is given to **Recall and F1-score for the fraud class**.
+These metrics help measure prediction accuracy.
 
 ---
 
 ## Model Performance
 
-| Model | Precision | Recall | F1 Score |
-|------|-----------|--------|---------|
-| Logistic Regression | ~0.54 | ~0.88 | ~0.67 |
-| Random Forest | ~0.92 | ~0.91 | ~0.91 |
-| XGBoost | ~0.94 | ~0.93 | ~0.93 |
+| Model | R² Score |
+|------|---------|
+| Linear Regression | ~0.70 |
+| Random Forest | ~0.85 |
+| XGBoost | ~0.88 |
 
-*Performance values may vary slightly depending on dataset split.*
+After hyperparameter tuning, the **XGBoost model achieved the best performance**.
+
+---
+
+## Feature Importance
+
+The model identifies the most important features influencing house prices.
+
+Top features typically include:
+
+- sqft_living
+- grade
+- bathrooms
+- view
+- sqft_above
+
+Feature importance visualization:
+
+outputs/feature_importance.png
 
 ---
 
 ## Project Structure
 
-```
-credit-card-fraud-detection/
-│
-├── data/                    # Dataset folder
-│
-├── models/                  # Saved trained models
-│
-├── src/                     # Source code
-│   ├── data_preprocessing.py
-│   ├── train_model.py
-│   └── evaluate_model.py
-│
-├── notebooks/               # Future experimentation notebooks
-│
-├── requirements.txt         # Project dependencies
-│
-└── README.md                # Project documentation
-```
+house-price-prediction/
+
+├── data/  
+│   └── housing.csv  
+
+├── models/  
+│   ├── best_house_price_model.pkl  
+│   └── tuned_house_price_model.pkl  
+
+├── notebooks/  
+│   └── eda.ipynb  
+
+├── outputs/  
+│   └── feature_importance.png  
+
+├── src/  
+│   ├── data_preprocessing.py  
+│   ├── train_model.py  
+│   └── evaluate_model.py  
+
+├── .gitignore  
+├── README.md  
+└── requirements.txt  
 
 ---
 
 ## Results
 
-The machine learning pipeline successfully detects fraudulent transactions by addressing severe class imbalance using SMOTE.
+The regression pipeline successfully predicts housing prices with high accuracy.
 
-Ensemble models such as **Random Forest and XGBoost** significantly improve fraud detection performance compared to the baseline model.
+The tuned **XGBoost model outperforms baseline models**, achieving strong predictive performance after feature engineering and hyperparameter tuning.
 
 ---
 
@@ -195,38 +220,25 @@ Ensemble models such as **Random Forest and XGBoost** significantly improve frau
 
 Install dependencies
 
-```
 pip install -r requirements.txt
-```
-
-Run preprocessing
-
-```
-python src/data_preprocessing.py
-```
 
 Train the model
 
-```
 python src/train_model.py
-```
 
 Evaluate the model
 
-```
 python src/evaluate_model.py
-```
 
 ---
 
 ## Future Improvements
 
-- Hyperparameter tuning using GridSearchCV or RandomizedSearchCV  
-- Feature scaling and feature selection  
-- Visualization of model comparison  
-- Experiment tracking using MLflow  
-- Deploying the model using FastAPI  
-- Containerizing the project using Docker  
+- Add feature scaling
+- Implement advanced feature engineering
+- Deploy prediction API using FastAPI
+- Build interactive UI using Streamlit
+- Add experiment tracking using MLflow
 
 ---
 
