@@ -1,4 +1,4 @@
-# Credit Card Fraud Detection
+# 💳 Credit Card Fraud Detection
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/bhushanpatil-ai-ml/credit-card-fraud-detection)
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
@@ -13,7 +13,7 @@ The pipeline includes **data preprocessing, class imbalance handling using SMOTE
 
 ---
 
-# Table of Contents
+# 📑 Table of Contents
 
 - Problem Statement
 - Objective
@@ -30,7 +30,7 @@ The pipeline includes **data preprocessing, class imbalance handling using SMOTE
 
 ---
 
-# Problem Statement
+# 📌 Problem Statement
 
 Credit card fraud detection is a challenging machine learning problem because fraudulent transactions are **extremely rare compared to legitimate transactions**.
 
@@ -40,7 +40,7 @@ Traditional machine learning models often fail in such scenarios, so techniques 
 
 ---
 
-# Objective
+# 🎯 Objective
 
 The main objectives of this project are:
 
@@ -52,7 +52,7 @@ The main objectives of this project are:
 
 ---
 
-# Dataset
+# 📊 Dataset
 
 The dataset used in this project is the **Credit Card Fraud Detection Dataset** from Kaggle.
 
@@ -80,7 +80,7 @@ Download it from Kaggle and place the CSV file inside the `data/` folder.
 
 ---
 
-# Technologies Used
+# 🛠 Technologies Used
 
 ### Programming
 
@@ -107,7 +107,7 @@ Download it from Kaggle and place the CSV file inside the `data/` folder.
 
 ---
 
-# Machine Learning Models
+# 🤖 Machine Learning Models
 
 This project trains and compares multiple machine learning models:
 
@@ -119,7 +119,7 @@ The models are evaluated using classification metrics to determine the **best pe
 
 ---
 
-# Project Workflow
+# 🔄 Project Workflow
 
 The project follows a structured machine learning pipeline:
 
@@ -136,7 +136,7 @@ The project follows a structured machine learning pipeline:
 
 ---
 
-# Evaluation Metrics
+# 📏 Evaluation Metrics
 
 Because fraud detection involves **imbalanced data**, accuracy alone is not sufficient.
 
@@ -152,7 +152,7 @@ Special focus is given to **Recall and F1-score for the fraud class**, since det
 
 ---
 
-# Project Structure
+# 🗂 Project Structure
 
 ```
 credit-card-fraud-detection/
@@ -175,7 +175,7 @@ credit-card-fraud-detection/
 
 ---
 
-# Results
+# 📈 Results
 
 The machine learning pipeline successfully detects fraudulent credit card transactions by handling class imbalance using **SMOTE** and training multiple classification models.
 
@@ -185,7 +185,7 @@ The final model achieves strong fraud detection performance with improved **Reca
 
 ---
 
-# How to Run the Project
+# ▶️ How to Run the Project
 
 ### 1 Install dependencies
 
@@ -213,7 +213,7 @@ python src/evaluate_model.py
 
 ---
 
-# Future Improvements
+# 🚀 Future Improvements
 
 Possible improvements for this project include:
 
@@ -226,7 +226,7 @@ Possible improvements for this project include:
 
 ---
 
-# Author
+# 👨‍💻 Author
 
 Bhushan Patil  
 AI / Machine Learning Engineer  
